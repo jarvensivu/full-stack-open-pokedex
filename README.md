@@ -1,15 +1,15 @@
-# Full Stack open CI/CD
+# Full Stack open Pokedex
 
-This repository is used for the CI/CD module of the Full stack open course
-
-Fork the repository to complete course exercises
+My solutions for the exercises of the CI/CD module of the University of Helsinki's Full Stack open course.
 
 ## Commands
 
-Start by running `npm install` inside the project folder
+| Command              | Description                   |
+|----------------------|-------------------------------|
+| `npm install`        | Install project dependencies  |
+| `npm start`          | Run the webpack dev server    |
+| `npm test`           | Run tests                     |
+| `npm run eslint`     | Run eslint for code linting   |
+| `npm run build`      | Make a production build       |
+| `npm run start-prod` | Run the production build      |
 
-`npm start` to run the webpack dev server
-`npm test` to run tests
-`npm run eslint` to run eslint
-`npm run build` to make a production build
-`npm run start-prod` to run your production build
