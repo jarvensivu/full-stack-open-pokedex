@@ -4,14 +4,16 @@ My solutions for the exercises of the CI/CD module of the University of Helsinki
 
 ## Commands
 
-| Command              | Description                   |
-|----------------------|-------------------------------|
-| `npm install`        | Install project dependencies  |
-| `npm start`          | Run the webpack dev server    |
-| `npm test`           | Run tests                     |
-| `npm run eslint`     | Run eslint for code linting   |
-| `npm run build`      | Make a production build       |
-| `npm run start-prod` | Run the production build      |
+| Command                | Description                               |
+|------------------------|-------------------------------------------|
+| `npm install`          | Install project dependencies              |
+| `npm start`            | Run the webpack dev server                |
+| `npm test`             | Run tests                                 |
+| `npm run eslint`       | Run eslint for code linting               |
+| `npm run build`        | Make a production build                   |
+| `npm run start-prod`   | Run the production build                  |
+| `npm run cypress:open` | Run E2E tests using graphical test runner |
+| `npm run test:e2e`     | Run E2E tests headlessly                  |
 
 ## My course module progress
 
