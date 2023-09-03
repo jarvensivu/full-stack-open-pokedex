@@ -24,7 +24,7 @@ My solutions for the exercises of the CI/CD module of the University of Helsinki
 | 5   | ✔    |
 | 6   | ✔    |
 | 7   | ✔    |
-| 8   |      |
+| 8   | ✔    |
 | 9   |      |
 | 10  |      |
 | 11  |      |
