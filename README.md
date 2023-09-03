@@ -2,6 +2,8 @@
 
 My solutions for the exercises of the CI/CD module of the University of Helsinki's Full Stack open course.
 
+I have deployed the Full Stack open Pokedex application to [Render](https://render.com/). It can be found [here](https://fso-pokedex-2j2j.onrender.com).
+
 ## Commands
 
 | Command                | Description                               |
