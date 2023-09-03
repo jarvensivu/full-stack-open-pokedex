@@ -30,9 +30,9 @@ I have deployed the Full Stack open Pokedex application to [Render](https://rend
 | 7   | ✔    |
 | 8   | ✔    |
 | 9   | ✔    |
-| 10  |      |
-| 11  |      |
-| 12  |      |
+| 10  | ✔    |
+| 11  | ✔    |
+| 12  | ✔    |
 | 13  |      |
 | 14  |      |
 | 15  |      |
