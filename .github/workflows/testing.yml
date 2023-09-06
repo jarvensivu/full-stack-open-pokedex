@@ -11,10 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: github context
-        if: ${{ github.event_name == 'push' }} && !contains(toJson(join(github.event.commits.*.message)), '#skip')
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
+      - name: github event name
+        env:
+          GITHUB_EVENT_NAME: ${{ toJson(github.event_name) }}
+        run: echo "$GITHUB_EVENT_NAME"
       - name: commits
         env:
           COMMITS: ${{ toJson(github.event.commits) }}
@@ -23,3 +26,7 @@ jobs:
         env:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
         run: echo "$COMMIT_MESSAGES"
+      - name: tagging should be skipped
+        env:
+          SKIP_TAGGING: ${{ toJson(github.event_name == 'push' && !contains(github.event.commits.*.message, '#skip')) }}
+        run: echo "$SKIP_TAGGING"
