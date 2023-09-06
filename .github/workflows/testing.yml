@@ -28,5 +28,5 @@ jobs:
         run: echo "$COMMIT_MESSAGES"
       - name: tagging should be skipped
         env:
-          SKIP_TAGGING: ${{ toJson(github.event_name == 'push' && !contains(github.event.commits.*.message, '#skip')) }}
+          SKIP_TAGGING: ${{ github.event_name == 'push' && !contains(toJson(join(github.event.commits.*.message)), '#skip') }}
         run: echo "$SKIP_TAGGING"
