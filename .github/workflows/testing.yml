@@ -26,7 +26,12 @@ jobs:
         env:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
         run: echo "$COMMIT_MESSAGES"
-      - name: tagging should be skipped
+      - name: commit messages contains skip
         env:
-          SKIP_TAGGING: ${{ github.event_name == 'push' && !contains(toJson(join(github.event.commits.*.message)), '#skip') }}
-        run: echo "$SKIP_TAGGING"
+          CONTAINS_SKIP: ${{ contains(toJson(join(github.event.commits.*.message)), '#skip') }}
+        run: echo "$CONTAINS_SKIP"
+      - name: run tagging and deployment on master branch
+        env:
+          RUN_TAGGING_AND_DEPLOYMENT_ON_MASTER: ${{ github.event_name == 'push' && !contains(toJson(join(github.event.commits.*.message)), '#skip') }}
+        run: echo "$RUN_TAGGING_AND_DEPLOYMENT_ON_MASTER"
+
