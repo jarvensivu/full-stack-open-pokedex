@@ -36,7 +36,7 @@ I have deployed the Full Stack open Pokedex application to [Render](https://rend
 | 13  | ✔    |
 | 14  | ✔    |
 | 15  | ✔    |
-| 16  |      |
+| 16  | ✔    |
 | 17  |      |
 | 18  |      |
 | 19  |      |
