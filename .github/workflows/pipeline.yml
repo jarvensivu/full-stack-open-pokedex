@@ -40,6 +40,15 @@ jobs:
         with:
           service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
           api-key: ${{ secrets.MY_RENDER_API_KEY }}
+      - name: Deployment success notification
+        uses: rjstone/discord-webhook-notify@v1
+        if: ${{ success() && github.event_name == 'push'}}
+        with:
+            severity: info
+            text: A new version of Pokedex deployed
+            description: 'to https://fso-pokedex-2j2j.onrender.com/ by ${{ github.event.pusher.name }}'
+            footer: 'Severity: Informational'
+            webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
   tag_release:
     needs: [simple_deployment_pipeline]
     runs-on: ubuntu-20.04
