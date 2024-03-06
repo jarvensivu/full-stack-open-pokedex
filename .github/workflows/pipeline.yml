@@ -25,6 +25,15 @@ jobs:
       - name: Build
         run: |
           npm run build
+      - name: Build failed notification
+        if: ${{ failure()}}
+        uses: rjstone/discord-webhook-notify@v1
+        with:
+            severity: error
+            text: Build failed
+            description: 'commit ${{github.event.commits[0].url}} by ${{ github.event.pusher.name }} broke the build :('
+            footer: 'Severity: Error'
+            webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Test
         run: |
           npm run test
