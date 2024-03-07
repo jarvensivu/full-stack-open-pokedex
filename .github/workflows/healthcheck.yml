@@ -1,0 +1,31 @@
+name: Health check
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the deployed service URL
+        uses: jtalk/url-health-check-action@v4
+        with:
+          url: https://fso-pokedex-2j2j.onrender.com/
+          follow-redirect: false
+          max-attempts: 3
+          retry-delay: 5s
+          retry-all: false
+      - name: Health check failure notification
+        if: failure()
+        uses: rjstone/discord-webhook-notify@v1
+        with:
+          severity: 'error'
+          text: 'The deployed service is not responding'
+          description: 'https://fso-pokedex-2j2j.onrender.com/ is not responding'
+          footer: 'Severity: Error'
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+      - name: Health check end
+        if: always()
+        run: echo "Health check ended"
