@@ -2,8 +2,6 @@ name: Health check
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 0 * * *'
 
 jobs:
   health-check:
@@ -26,6 +24,3 @@ jobs:
           description: 'https://fso-pokedex-2j2j.onrender.com/ is not responding'
           footer: 'Severity: Error'
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-      - name: Health check end
-        if: always()
-        run: echo "Health check ended"
