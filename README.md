@@ -1,6 +1,8 @@
 # Full Stack open Pokedex
 
-My solutions for the exercises of the CI/CD module of the University of Helsinki's Full Stack open course.
+My exercise solutions for exercises 11.1-11.19 from the CI/CD module of the University of Helsinki's Full Stack open course. My exercise solutions for exerceses 11.20 and 11.21 of the CI/CD module can be found [here](https://github.com/jarvensivu/full-stack-open-cicd).
+
+My main repository for exercise solutions for course exercises can be found [here](https://github.com/jarvensivu/full-stack-open).
 
 I have deployed the Full Stack open Pokedex application to [Render](https://render.com/). It can be found [here](https://fso-pokedex-2j2j.onrender.com).
 
